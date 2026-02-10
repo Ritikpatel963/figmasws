@@ -1,264 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ZeroKart - Sustainable Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-green: #0F5132;
-            --light-gray: #E5E7EB;
-            --text-dark: #1F2937;
-            --text-light: #6B7280;
-        }
-
-        body, html {
-            height: 100%;
-            width: 100%;
-            font-family: 'Outfit', sans-serif;
-            background: #f4f4f4;
-            /* Prevent horizontal scroll from animations */
-            overflow-x: hidden; 
-        }
-
-        /* --- Header Styles --- */
-        .header-container {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px);
-            max-width: 1200px;
-            z-index: 1000;
-            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-
-        header {
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.30);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 12px 24px;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 32px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .nav-left, .nav-links { display: flex; gap: 32px; }
-        .nav-left { justify-content: flex-end; }
-        .nav-right { display: flex; align-items: center; gap: 32px; justify-content: space-between; }
-
-        .nav-left a, .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--text-dark);
-        }
-
-        .logo-icon { width: 32px; height: 32px; }
-
-        .icon-group { display: flex; gap: 12px; }
-        .icon-btn {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; transition: all 0.3s ease;
-        }
-
-        /* --- Banner Styles (FULL SCREEN FIX) --- */
-        .banner {
-            height: 100vh; /* Fixed height */
-            width: 100vw;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('assets/images/Home-banner.webp');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Vertical Center */
-            align-items: center;
-            overflow: hidden; /* No scroll allowed inside banner */
-        }
-
-        .banner-content {
-            width: 100%;
-            max-width: 1400px;
-            padding-top: 80px; /* Offset for the floating header */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 5;
-        }
-
-        .product-display {
-            width: 90%;
-            max-width: 850px;
-            animation: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-        }
-
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .tv-frame {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .tv-screen {
-            background: rgba(0,0,0,0.2);
-            border-radius: 12px;
-            padding: 40px 20px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .brand-title {
-            font-family: 'Space Mono', monospace;
-            font-size: clamp(24px, 5vw, 56px);
-            color: white;
-            letter-spacing: 10px;
-            margin-bottom: 30px;
-            animation: glow 3s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.2); }
-            50% { text-shadow: 0 0 25px rgba(255,255,255,0.5); }
-        }
-
-        .products {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-        .product-can {
-            width: clamp(100px, 15vw, 160px);
-            height: clamp(220px, 35vh, 380px);
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .product-can:nth-child(2) { animation-delay: 0.5s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .can-label { padding: 15px; }
-        .can-brand { font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; }
-        .can-image { width: 100%; height: 50%; background: #ff6b6b; display: flex; align-items: center; justify-content: center; font-size: 40px; }
-        .product-can:nth-child(2) .can-image { background: #ffd93d; }
-
-        /* --- Characters --- */
-        .character {
-            position: absolute;
-            bottom: 5%;
-            z-index: 2;
-        }
-        .character-left { left: 5%; animation: characterFloat 5s ease-in-out infinite; }
-        .character-right { right: 5%; animation: characterFloat 5s ease-in-out infinite 0.7s; }
-
-        .character-placeholder {
-            width: 120px; height: 120px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; font-size: 50px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        @keyframes characterFloat {
-            0%, 100% { transform: translateY(0) rotate(-3deg); }
-            50% { transform: translateY(-20px) rotate(3deg); }
-        }
-
-        /* --- CTA Buttons --- */
-        .cta-section {
-            margin-top: 40px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s;
-            font-family: inherit;
-        }
-
-        .btn-primary { background: var(--primary-green); color: white; }
-        .btn-secondary { background: white; color: var(--text-dark); border: 1px solid var(--light-gray); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        /* --- Responsive Tweaks for Small Screens --- */
-        @media (max-width: 768px) {
-            .header-container { top: 10px; width: calc(100% - 20px); }
-            header { padding: 8px 15px; gap: 10px; }
-            .nav-left, .nav-links { display: none; } /* Hide text links on mobile */
-            .logo span { font-size: 14px; }
-            
-            .tv-frame { padding: 15px; }
-            .tv-screen { padding: 20px 10px; }
-            .character { display: none; }
-            
-            .cta-section { flex-direction: column; width: 80%; }
-            .btn { width: 100%; }
-        }
-
-        /* Fix for short screens (Landscape phones) */
-        @media (max-height: 600px) {
-            .brand-title { font-size: 24px; margin-bottom: 10px; }
-            .product-can { height: 180px; }
-            .banner-content { padding-top: 50px; }
-            .tv-frame { padding: 10px; }
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body>
 
     <div class="header-container">
@@ -271,8 +26,9 @@
             <div class="logo">
                 <div class="logo-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M12 6L12 18M12 6C10 8 8 9 6 9M12 6C14 8 16 9 18 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M12 6L12 18M12 6C10 8 8 9 6 9M12 6C14 8 16 9 18 9" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" />
                     </svg>
                 </div>
                 <span>ZeroKart</span>
@@ -293,45 +49,510 @@
 
     <section class="banner">
         <div class="banner-content">
-            <div class="product-display">
-                <div class="tv-frame">
-                    <div class="tv-screen">
-                        <h1 class="brand-title">GUTTIERO</h1>
-                        <div class="products">
-                            <div class="product-can">
-                                <div class="can-label"><div class="can-brand">GUTTIERO</div></div>
-                                <div class="can-image">🍓</div>
-                            </div>
-                            <div class="product-can">
-                                <div class="can-label"><div class="can-brand">GUTTIERO</div></div>
-                                <div class="can-image">🍊</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="cta-section">
                 <button class="btn btn-primary">Shop Essentials</button>
                 <button class="btn btn-secondary">Explore Editions</button>
+                <button class="btn btn-secondary">Experience ZeroWay</button>
                 <button class="btn btn-secondary">Join ZeroKart</button>
             </div>
         </div>
     </section>
 
-    <script>
-        // Disable accidental scroll pull-to-refresh on mobile
-        document.body.style.overscrollBehavior = 'none';
+    <!-- Zero Essentials Section -->
+<section class="ze-section">
+    <div class="ze-container">
+        <div class="ze-header">
+            <h2 class="ze-title">Zero Essentials</h2>
+            <p class="ze-subtitle">Expertly designed products that elevate everyday sustainability practices.</p>
+        </div>
 
-        // Parallax Effect for characters
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const chars = document.querySelectorAll('.character');
-            chars.forEach((char, i) => {
-                const speed = 0.4 + (i * 0.1);
-                char.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    </script>
+        <div class="ze-grid">
+            <!-- Card 1: GUTZERO -->
+            <div class="ze-card">
+                <div class="ze-card-image">
+                    <img src="path-to-gutzero-image.jpg" alt="GUTZERO">
+                </div>
+                <div class="ze-card-content">
+                    <h3 class="ze-card-title">GUTZERO</h3>
+                    <p class="ze-card-desc">Probiotic drink, sold in organic bottle</p>
+                    
+                    <div class="ze-badges">
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            Zero waste
+                        </span>
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            Organic certified
+                        </span>
+                    </div>
+                    
+                    <button class="ze-btn ze-btn-primary">Check It Out</button>
+                </div>
+            </div>
+
+            <!-- Card 2: ZEROWIPE -->
+            <div class="ze-card">
+                <div class="ze-card-image">
+                    <img src="path-to-zerowipe-image.jpg" alt="ZEROWIPE">
+                </div>
+                <div class="ze-card-content">
+                    <h3 class="ze-card-title">ZEROWIPE</h3>
+                    <p class="ze-card-desc">Thoughtfully made tissues that are ge...</p>
+                    
+                    <div class="ze-badges">
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            100% bamboo
+                        </span>
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            Biodegradable
+                        </span>
+                    </div>
+                    
+                    <button class="ze-btn ze-btn-primary">Check It Out</button>
+                </div>
+            </div>
+
+            <!-- Card 3: ZEROWIPE TOILET ROLL -->
+            <div class="ze-card">
+                <div class="ze-card-image">
+                    <img src="path-to-toilet-roll-image.jpg" alt="ZEROWIPE TOILET ROLL">
+                </div>
+                <div class="ze-card-content">
+                    <h3 class="ze-card-title">ZEROWIPE TOILET ROLL</h3>
+                    <p class="ze-card-desc">Compostable toilet rolls (idea clean, mini...</p>
+                    
+                    <div class="ze-badges">
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            Compostable
+                        </span>
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            FSC certified
+                        </span>
+                    </div>
+                    
+                    <button class="ze-btn ze-btn-primary">Check It Out</button>
+                </div>
+            </div>
+
+            <!-- Card 4: LOOZERO -->
+            <div class="ze-card">
+                <div class="ze-card-image">
+                    <img src="path-to-loozero-image.jpg" alt="LOOZERO">
+                </div>
+                <div class="ze-card-content">
+                    <h3 class="ze-card-title">LOOZERO</h3>
+                    <p class="ze-card-desc">Clean toilet seats, minus toxins and w...</p>
+                    
+                    <div class="ze-badges">
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            Lifetime warranty
+                        </span>
+                        <span class="ze-badge">
+                            <span class="ze-badge-icon"></span>
+                            Zero plastic
+                        </span>
+                    </div>
+                    
+                    <button class="ze-btn ze-btn-secondary">Coming soon</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Zero Editions Section -->
+<section class="zed-section" style="background-image: url('path-to-background-image.jpg');">
+    <div class="zed-container">
+        <div class="zed-header">
+            <div class="zed-logo">
+                <h2 class="zed-logo-text">ZERO<br><span>EDITIONS</span></h2>
+            </div>
+            <p class="zed-tagline">Exclusive collaborations with visionary brands pushing boundaries of sustainable luxury.</p>
+        </div>
+
+        <!-- Swiper Slider -->
+        <div class="swiper zed-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1: Almost Gods × Zero -->
+                <div class="swiper-slide">
+                    <div class="zed-collab-card">
+                        <img src="path-to-almost-gods-image.jpg" alt="Almost Gods" class="zed-card-bg">
+                        <div class="zed-card-overlay"></div>
+                        <div class="zed-card-content">
+                            <button class="zed-label-btn">LIMITED EDITION</button>
+                            <div class="zed-card-text">
+                                <h3 class="zed-card-title">ALMOST GODS × ZERO</h3>
+                                <p class="zed-card-desc">Where culture meets consciousness.</p>
+                            </div>
+                            <button class="zed-cta-btn">Join the Waitlist →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Naso × Zero -->
+                <div class="swiper-slide">
+                    <div class="zed-collab-card">
+                        <img src="path-to-naso-image.jpg" alt="Naso" class="zed-card-bg">
+                        <div class="zed-card-overlay"></div>
+                        <div class="zed-card-content">
+                            <button class="zed-label-btn">LIMITED EDITION</button>
+                            <div class="zed-card-text">
+                                <h3 class="zed-card-title">NASO × ZERO</h3>
+                                <p class="zed-card-desc">Essence, with intent.</p>
+                            </div>
+                            <button class="zed-cta-btn">Join the Waitlist →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Yokobara × Zero -->
+                <div class="swiper-slide">
+                    <div class="zed-collab-card">
+                        <img src="path-to-yokobara-image.jpg" alt="Yokobara" class="zed-card-bg">
+                        <div class="zed-card-overlay"></div>
+                        <div class="zed-card-content">
+                            <button class="zed-label-btn">LIMITED EDITION</button>
+                            <div class="zed-card-text">
+                                <h3 class="zed-card-title">YOKOBARA × ZERO</h3>
+                                <p class="zed-card-desc">Designed to move forward.</p>
+                            </div>
+                            <button class="zed-cta-btn">Join the Waitlist →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collaborations Background Image -->
+        <div class="zed-bottom-graphic">
+            <img src="path-to-collaborations-text-image.png" alt="Collaborations" class="zed-collab-text-img">
+        </div>
+    </div>
+</section>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+    .zed-section {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0 120px;
+        overflow: hidden;
+    }
+
+    .zed-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .zed-header {
+        margin-bottom: 60px;
+    }
+
+    .zed-logo-text {
+        font-family: 'Space Mono', monospace;
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+        line-height: 0.9;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    .zed-logo-text span {
+        font-size: 18px;
+        letter-spacing: 10px;
+        font-weight: 400;
+    }
+
+    .zed-tagline {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 15px;
+        max-width: 550px;
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    /* Swiper Container */
+    .zed-swiper {
+        padding: 40px 0 60px;
+        overflow: visible !important;
+    }
+
+    .zed-swiper .swiper-wrapper {
+        align-items: center;
+    }
+
+    /* Slider Configuration - Side cards bigger */
+    .zed-swiper .swiper-slide {
+        width: 420px;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: scale(0.88) translateY(15px);
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+    /* Previous and Next slides positioning */
+    .zed-swiper .swiper-slide-prev,
+    .zed-swiper .swiper-slide-next {
+        transform: scale(0.88) translateY(15px);
+        opacity: 0.7;
+    }
+
+    /* Center Active Slide - Slightly larger */
+    .zed-swiper .swiper-slide-active {
+        transform: scale(1.08) translateY(0);
+        opacity: 1;
+        z-index: 10;
+    }
+
+    /* Card Styling */
+    .zed-collab-card {
+        position: relative;
+        height: 400px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        cursor: grab;
+    }
+
+    .zed-swiper .swiper-slide-active .zed-collab-card {
+        box-shadow: 0 35px 90px rgba(0, 0, 0, 0.6);
+    }
+
+    .zed-card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .zed-card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    }
+
+    .zed-card-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 28px;
+        z-index: 2;
+    }
+
+    .zed-label-btn {
+        align-self: flex-start;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: white;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        cursor: default;
+        font-family: 'Outfit', sans-serif;
+        text-transform: uppercase;
+    }
+
+    .zed-card-text {
+        text-align: center;
+        margin: auto 0;
+    }
+
+    .zed-card-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-family: 'Outfit', sans-serif;
+    }
+
+    .zed-card-desc {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 400;
+        font-family: 'Outfit', sans-serif;
+    }
+
+    .zed-cta-btn {
+        background: white;
+        color: #0F5132;
+        border: none;
+        padding: 13px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Outfit', sans-serif;
+        width: 100%;
+    }
+
+    .zed-cta-btn:hover {
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-2px);
+    }
+
+    /* Bottom Collaborations Image */
+    .zed-bottom-graphic {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .zed-collab-text-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        opacity: 0.12;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+        .zed-swiper .swiper-slide {
+            width: 360px;
+            transform: scale(0.86) translateY(12px);
+        }
+
+        .zed-swiper .swiper-slide-active {
+            transform: scale(1.05) translateY(0);
+        }
+
+        .zed-collab-card {
+            height: 380px;
+        }
+
+        .zed-card-title {
+            font-size: 22px;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .zed-section {
+            padding: 60px 0 100px;
+        }
+
+        .zed-container {
+            padding: 0 16px;
+        }
+
+        .zed-header {
+            margin-bottom: 40px;
+        }
+
+        .zed-logo-text {
+            font-size: 36px;
+        }
+
+        .zed-logo-text span {
+            font-size: 16px;
+            letter-spacing: 8px;
+        }
+
+        .zed-tagline {
+            font-size: 14px;
+        }
+
+        .zed-swiper .swiper-slide {
+            width: 300px;
+            transform: scale(0.8) translateY(20px);
+        }
+
+        .zed-swiper .swiper-slide-active {
+            transform: scale(1.05) translateY(0);
+        }
+
+        .zed-collab-card {
+            height: 380px;
+        }
+
+        .zed-card-content {
+            padding: 24px;
+        }
+
+        .zed-card-title {
+            font-size: 20px;
+        }
+
+        .zed-card-desc {
+            font-size: 14px;
+        }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+        .zed-swiper .swiper-slide {
+            width: 260px;
+        }
+
+        .zed-collab-card {
+            height: 360px;
+        }
+
+        .zed-card-title {
+            font-size: 18px;
+        }
+    }
+</style>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    // Initialize Swiper
+    const zedSwiper = new Swiper('.zed-swiper', {
+        effect: 'slide',
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: -80,
+        loop: true,
+        grabCursor: true,
+        speed: 700,
+        loopAdditionalSlides: 1,
+        breakpoints: {
+            320: {
+                spaceBetween: -60
+            },
+            768: {
+                spaceBetween: -70
+            },
+            1024: {
+                spaceBetween: -80
+            }
+        }
+    });
+    
+    // Force to slide 1 (NASO) after a brief delay
+    setTimeout(() => {
+        zedSwiper.slideToLoop(1, 0);
+    }, 100);
+</script>
 </body>
+
 </html>
