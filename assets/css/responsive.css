@@ -1,0 +1,338 @@
+/* --- Responsive Tweaks for Small Screens --- */
+@media (max-width: 768px) {
+    .header-container {
+        top: 10px;
+        width: calc(100% - 20px);
+    }
+
+    header {
+        padding: 8px 15px;
+        gap: 10px;
+    }
+
+    .nav-left,
+    .nav-links {
+        display: none;
+    }
+
+    .logo span {
+        font-size: 14px;
+    }
+
+    .banner-content {
+        padding-bottom: 40px;
+    }
+
+    .cta-section {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Fix for short screens */
+@media (max-height: 600px) {
+    .banner-content {
+        padding-bottom: 30px;
+    }
+}
+
+/* Zero Essentials */
+/* Tablet */
+@media (max-width: 1024px) {
+    .ze-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .ze-section {
+        padding: 60px 16px;
+    }
+
+    .ze-title {
+        font-size: 28px;
+    }
+
+    .ze-subtitle {
+        font-size: 14px;
+    }
+
+    .ze-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .ze-card-image {
+        height: 220px;
+    }
+
+    .ze-header {
+        margin-bottom: 32px;
+    }
+}
+
+/* Zero Section  */
+/* Tablet */
+@media (max-width: 1024px) {
+    .zed-swiper .swiper-slide {
+        width: 360px;
+        transform: scale(0.86) translateY(12px);
+    }
+
+    .zed-swiper .swiper-slide-active {
+        transform: scale(1.05) translateY(0);
+    }
+
+    .zed-collab-card {
+        height: 380px;
+    }
+
+    .zed-card-title {
+        font-size: 22px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .zed-section {
+        padding: 60px 0 100px;
+    }
+
+    .zed-container {
+        padding: 0 16px;
+    }
+
+    .zed-header {
+        margin-bottom: 40px;
+    }
+
+    .zed-logo-text {
+        font-size: 36px;
+    }
+
+    .zed-logo-text span {
+        font-size: 16px;
+        letter-spacing: 8px;
+    }
+
+    .zed-tagline {
+        font-size: 14px;
+    }
+
+    .zed-swiper .swiper-slide {
+        width: 300px;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    .zed-swiper .swiper-slide-active {
+        transform: scale(1.05) translateY(0);
+    }
+
+    .zed-collab-card {
+        height: 380px;
+    }
+
+    .zed-card-content {
+        padding: 24px;
+    }
+
+    .zed-card-title {
+        font-size: 20px;
+    }
+
+    .zed-card-desc {
+        font-size: 14px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .zed-swiper .swiper-slide {
+        width: 260px;
+    }
+
+    .zed-collab-card {
+        height: 360px;
+    }
+
+    .zed-card-title {
+        font-size: 18px;
+    }
+}
+
+/* Experiences Section */
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .exp-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-section {
+        padding: 60px 16px;
+    }
+
+    .exp-header {
+        margin-bottom: 40px;
+    }
+
+    .exp-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .exp-card-inner {
+        height: 450px;
+        padding: 24px;
+    }
+
+    .exp-card-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .exp-card-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .exp-card-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exp-card-inner {
+        height: 400px;
+        padding: 20px;
+    }
+
+    .exp-card-title {
+        font-size: 1.5rem;
+    }
+
+    .exp-card-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.exp-card-btn:focus-visible {
+    outline: 3px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+.exp-card-inner:focus {
+    outline: 3px solid #4a90e2;
+    outline-offset: 4px;
+}
+
+/* Marketplace css */
+
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .zm-container {
+        padding: 60px 20px;
+    }
+
+    .zm-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .zm-showcase {
+        min-height: 400px;
+        padding: 36px;
+    }
+
+    .zm-seal {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px;
+    }
+
+    .zm-tabs {
+        justify-content: stretch;
+    }
+
+    .zm-tab {
+        flex: 1;
+        min-width: 140px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .zm-hero {
+        margin-bottom: 60px;
+    }
+
+    .zm-features {
+        margin-top: 60px;
+    }
+
+    .zm-seal {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .zm-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .zm-tab {
+        width: 100%;
+    }
+
+    .zm-showcase {
+        min-height: 350px;
+        padding: 28px;
+    }
+
+    .zm-showcase__icon {
+        width: 48px;
+        height: 48px;
+        top: 24px;
+        left: 24px;
+    }
+
+    .zm-feature-list {
+        padding: 20px 0;
+    }
+
+    .zm-seal__badge {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+}
+
+/* Hidden class for tab content */
+.zm-hidden {
+    display: none;
+}
