@@ -1,0 +1,1149 @@
+@font-face {
+    font-family: 'Norwester';
+    /* This is the name you will use later */
+    src: url('../fonts/norwester.otf') format('opentype');
+    /* Path to the file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Shows a fallback font until Norwester loads */
+}
+
+@font-face {
+    font-family: '29LT Zawi';
+    /* This is the name you will use later */
+    src: url('../fonts/29lt-zawi-regular.otf') format('opentype');
+    /* Path to the file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Shows a fallback font until Norwester loads */
+}
+
+@font-face {
+    font-family: 'Poppins';
+    /* This is the name you will use later */
+    src: url('../fonts/poppins.regular.ttf') format('opentype');
+    /* Path to the file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Shows a fallback font until Norwester loads */
+}
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    /* This is the name you will use later */
+    src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
+    /* Path to the file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Shows a fallback font until Norwester loads */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    /* This is the name you will use later */
+    src: url('../fonts/Roboto-Regular.ttf') format('opentype');
+    /* Path to the file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Shows a fallback font until Norwester loads */
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    /* This is the name you will use later */
+    src: url('../fonts/montserrat.regular.otf') format('opentype');
+    /* Path to the file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Shows a fallback font until Norwester loads */
+}
+
+:root {
+    --gz-primary: #000000;
+    --gz-accent: #eaff00;
+    /* Neon yellow from the image */
+    --gz-bg: #f8f9fa;
+    --gz-text-muted: #666;
+    /* Font Sizes */
+    --gz-size-title: clamp(2rem, 8vw, 72px);
+    --gz-larg-font-size: clamp(2rem, 8vw, 104.031px);
+    --gz-larg-lh-size: clamp(40px, 7vw, 95.6px);
+    --gz-discription: clamp(14px, 2vw, 18px);
+    --gz-dis-lh-sm: clamp(20px, 1.8vw, 25.2px);
+    --gz-size-sub: 1.2rem;
+    --gz-lh-min: 40px;
+    /* Minimum height for mobile */
+    --gz-lh-max: 68.4px;
+    /* Maximum height for desktop */
+
+}
+
+.side-gap {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+body.gz-body-bg {
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--gz-primary);
+    min-height: 100vh;
+}
+
+.gz-title {
+    color: var(--GutZero-primary, #000);
+    align-self: stretch;
+    /* GutZero/display1 regular */
+    font-family: 'Norwester';
+    font-size: var(--gz-size-title);
+    font-style: normal;
+    font-weight: 400;
+    line-height: clamp(var(--gz-lh-min), 5vw, var(--gz-lh-max));
+}
+
+.gz-tagline {
+    color: var(--GutZero-primary, #000);
+    font-family: '29LT Zawi';
+    font-size: 32.857px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 59.4px;
+    /* 180.783% */
+    letter-spacing: -1.28px;
+}
+
+.gz-score-label {
+    color: var(--GutZero-primary, #000);
+    text-align: center;
+    font-family: "Glacial Indifference";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 11.021px;
+    /* 91.844% */
+    letter-spacing: 0.81px;
+    text-transform: uppercase;
+}
+
+.two {
+    color: var(--GutZero-primary, #000);
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 31.767px;
+    /* 132.364% */
+    letter-spacing: 0.12px;
+}
+
+.three {
+    color: var(--GutZero-primary, #000);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 12.966px;
+    font-style: normal;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 18.153px;
+    /* 140% */
+}
+
+.gz-product-card {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(5px);
+}
+
+.gz-main-image {
+    max-height: 500px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+.gz-feature-text {
+    color: #000;
+    text-align: center;
+
+    /* GutZero/content/regular */
+    font-family: 'poppins';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.4px;
+    /* 140% */
+}
+
+.gz-price {
+    color: var(--GutZero-primary, #000);
+    text-align: center;
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50.4px;
+    /* 140% */
+}
+
+.text-muted {
+    color: var(--GutZero-primary, #000);
+
+
+    /* GutZero/content2/regular */
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+    /* 140% */
+}
+
+.gz-score-badge {
+    display: flex;
+    width: 206px;
+    padding: 8.104px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.052px;
+    border-radius: 9.725px;
+    background: rgba(0, 0, 0, 0.00);
+    border: 2px solid #FFFFFF;
+
+}
+
+.gz-score-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.rat-box {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.gz-score-desc {
+    color: var(--GutZero-primary, #000);
+    text-align: center;
+    font-family: "Glacial Indifference";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px;
+    /* 140% */
+}
+
+.gz-btn-primary {
+    display: flex;
+    width: 508px;
+    height: 60px;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    color: #FFF;
+    text-align: center;
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33.6px;
+    /* 140% */
+}
+
+.gz-btn-primary:hover {
+    background: #333;
+    color: var(--gz-accent);
+}
+
+.gz-chip {
+    border: 1px solid #000;
+    background: white;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gz-qty-chip {
+    display: flex;
+    height: 36px;
+    padding: 1px 10px 1px 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 2px;
+    background: #FFF;
+    color: #000;
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.4px;
+    /* 140% */
+}
+
+.gz-chip {
+    display: flex;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--GutZero-default-white, #FFF);
+    box-shadow: 5px 4px 0 0 #000;
+    color: var(--GutZero-primary, #000);
+    font-family: "29LT Zawi";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.8px;
+    /* 140% */
+    letter-spacing: -1.28px;
+}
+
+.gz-chip.active {
+    display: flex;
+    padding: 10px 16px 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--GutZero-lemon-basil, #FAFE55);
+    box-shadow: 5px 4px 0 0 #000;
+    color: var(--GutZero-primary, #000);
+    font-family: "29LT Zawi";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.8px;
+    /* 140% */
+    letter-spacing: -1.28px;
+}
+
+.gz-label-2 {
+    color: #000;
+    text-align: center;
+
+    /* GutZero/content/regular */
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.4px;
+    /* 140% */
+}
+
+.gz-thumb {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gz-thumb.active {
+    border: 2px solid #000;
+}
+
+.gz-label {
+    color: var(--GutZero-primary, #000);
+    text-align: center;
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+    /* 140% */
+}
+
+.gz-feature-icon {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 298.209px;
+    background: var(--GutZero-primary, #000);
+}
+
+.back-video {
+    position: relative;
+    overflow: hidden;
+}
+
+/* This forces the video to stay behind the content */
+.bg-video-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Keeps video from stretching */
+    z-index: -1;
+    /* Sends it to the back layer */
+}
+
+
+
+/* image section */
+/* Custom unique class names to prevent conflicts */
+
+.gz-hero-section {
+    background-color: #ffffff;
+    overflow: hidden;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.gz-main-title {
+    color: var(--Grays-Black, var(--Grays-Black, #000));
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: var(--gz-size-title);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64.4px;
+    /* 115% */
+}
+
+.gz-description {
+    color: rgba(0, 0, 0, 0.50);
+
+    /* GutZero/content2/semibold */
+    font-family: Montserrat;
+    font-size: var(--gz-discription);
+    font-style: normal;
+    font-weight: 600;
+    --gz-dis-lh-sm: clamp(20px, 1.8vw, 25.2px);
+}
+
+/* Image Wrapper and Splash Effect */
+.gz-image-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 40px;
+    width: 50%;
+}
+
+.gz-product-image {
+    position: relative;
+    z-index: 2;
+    transform: rotate(0deg);
+    /* Replicates the tilted look in your image */
+    max-height: 450px;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+/* .gz-product-image:hover {
+    transform: rotate(-10deg) scale(1.05);
+} */
+
+/* Background Splash Placeholder */
+.gz-splash-bg {
+    position: absolute;
+    top: 61%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/1f37f2e619ac7a95393c6a39c495aa36569b4be3.png');
+    /* Replace with your specific splash asset */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    opacity: 1;
+
+    mix-blend-mode: exclusion;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991.98px) {
+    .gz-main-title {
+        text-align: center;
+    }
+
+    .gz-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .gz-product-image {
+        max-height: 350px;
+    }
+}
+
+
+
+/*  */
+
+/* sky image *
+/* Section Container */
+.gz-full-hero {
+    width: 100%;
+    /* 100vh makes it exactly the height of the screen */
+    height: 100vh;
+    min-height: 600px;
+
+    /* Set your combined image here */
+    background-image: url('../images/Frame\ 114\ \(1\).png');
+
+    /* 'cover' ensures the image fills the screen. 
+       'bottom center' ensures the ocean/mountain stays at the bottom. */
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    /* Keeps content towards the top sky area */
+}
+
+/* Positioning the text box */
+.gz-content-box {
+    /* Adjust this to move text up or down in the sky */
+    z-index: 5;
+    margin-left: 90px;
+}
+
+/* Typography */
+.gz-main-heading {
+    color: var(--Grays-Black, var(--Grays-Black, #000));
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: var(--gz-size-title);
+    font-style: normal;
+    font-weight: 400;
+    line-height: clamp(var(--gz-lh-min), 5vw, var(--gz-lh-max));
+}
+
+.gz-flex-item {
+    color: #000;
+
+    /* GutZero/content2/semibold */
+    font-family: Montserrat;
+    font-size: var(--gz-discription);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25.2px;
+    width: 430px;
+    /* 140% */
+}
+
+.gz-flex-item-2 {
+    color: #000;
+
+    /* GutZero/content2/semibold */
+    font-family: Montserrat;
+    font-size: var(--gz-discription);
+    font-style: normal;
+    font-weight: 600;
+    --gz-dis-lh-sm: clamp(20px, 1.8vw, 25.2px);
+    margin-left: 100px;
+
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .gz-full-hero {
+        /* On mobile, we shift the background slightly to keep the diver/mountain visible */
+        background-position: 25% bottom;
+    }
+
+    .gz-content-box {
+        padding-top: 40px;
+        /* Adds a slight blur background to make text readable if it overlaps the mountain */
+        /* background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px); */
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+}
+
+
+/* benefits */
+/* Container & Section Base */
+/* --- Conscience Section Styles --- */
+.gz-conscience-section {
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    /* Replace with your background image */
+    display: flex;
+    align-items: flex-start;
+}
+
+.gz-main-title {
+    color: var(--Grays-Black, var(--Grays-Black, #000));
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: var(--gz-size-title);
+    font-style: normal;
+    font-weight: 400;
+    line-height: clamp(var(--gz-lh-min), 5vw, var(--gz-lh-max));
+}
+
+.gz-sub-text {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+    flex: 1;
+}
+
+/* --- Benefits Section Styles --- */
+.gz-benefits-section {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.gz-section-heading {
+    color: var(--Grays-Black, var(--Grays-Black, #000));
+
+    /* GutZero/display1 regular */
+    font-family: Norwester;
+    font-size: var(--gz-size-title);
+    font-style: normal;
+    font-weight: 400;
+    line-height: clamp(var(--gz-lh-min), 5vw, var(--gz-lh-max));
+}
+
+/* Intel Card Styling */
+.gz-intel-card {
+    width: 521px;
+    height: 521px;
+    aspect-ratio: 1/1;
+}
+
+.gz-card-title {
+    font-family: 'Impact', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.gz-intel-list li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* Polydextrose Detail Box */
+.gz-detail-box {
+    background-color: #fffdf0;
+    /* Subtle yellow tint from design */
+    border: 1px solid #eee;
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.content-img {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.gz-detail-header {
+    color: var(--Grays-Black, var(--Grays-Black, #000));
+
+    /* GutZero/h1 regular */
+    font-family: Norwester;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44.8px;
+    /* 140% */
+}
+
+.gz-detail-list li {
+    color: var(--GutZero-primary, #000);
+
+    /* GutZero/content2/medium */
+    font-family: Montserrat;
+    font-size: var(--gz-discription);
+    font-style: normal;
+    font-weight: 500;
+    --gz-dis-lh-sm: clamp(20px, 1.8vw, 25.2px);
+}
+
+/* --- Positioning Floating ../images --- */
+.gz-float-img {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    max-width: 200px;
+}
+
+.gz-float-img.top-right {
+    top: 5%;
+    right: 5%;
+    transform: rotate(15deg);
+}
+
+.gz-float-img.bottom-left {
+    bottom: 5%;
+    left: 5%;
+    transform: rotate(-10deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .gz-intel-card {
+        border-radius: 30px;
+        /* Soften corners on mobile */
+    }
+
+    .gz-detail-box {
+        margin-top: 20px;
+    }
+}
+
+.image-1 {
+    width: 352px;
+    height: 292px;
+    aspect-ratio: 88/73;
+    position: absolute;
+    top: 31px;
+    left: 0;
+}
+
+.image-2 {
+    width: 293.874px;
+    height: 223.545px;
+    transform: rotate(-34.81deg);
+    aspect-ratio: 117/89;
+    position: absolute;
+    right: -80px;
+    top: 10px;
+}
+
+.image-3 {
+    width: 222px;
+    height: 173px;
+    aspect-ratio: 77/60;
+    position: absolute;
+    left: 0px;
+    bottom: 50px;
+    z-index: 3;
+}
+
+.image-4 {
+    width: 243px;
+    height: 306px;
+    aspect-ratio: 27/34;
+    position: absolute;
+    right: -62px;
+    bottom: 0;
+    z-index: 3;
+}
+
+/*  */
+
+
+/* one way trip */
+/* Unique wrapper for the entire section */
+.gz-ctr-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    /* Full screen height */
+    padding: 100px 0;
+    /* Set your one full background image here */
+    background-image: url('../images/Frame\ 1000003491\ \(1\).png');
+    background-size: cover;
+    /* background-position: center bottom; */
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: white;
+}
+
+.gz-ctr-content-z {
+    margin-bottom: -35px;
+}
+
+/* Typography styles */
+.gz-ctr-main-title {
+    color: #000;
+    text-align: center;
+    font-family: Norwester;
+    font-size: var(--gz-size-title);
+    font-style: normal;
+    font-weight: 400;
+    line-height: clamp(var(--gz-lh-min), 5vw, var(--gz-lh-max));
+
+}
+
+.gz-ctr-main-title-2 {
+    color: #000;
+    font-family: Norwester;
+    font-size: 104.031px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--gz-larg-lh-size);
+    text-align: center;
+}
+
+.gz-ctr-description {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 850px;
+    margin: 0 auto;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Centered Product Image Styling */
+.gz-ctr-image-box {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin-left: -380px;
+}
+
+.gz-ctr-hero-img {
+    max-height: 570px;
+    margin-top: 40px;
+    /* Mimics the tilted brand aesthetic seen in the design */
+    /* filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+    transition: transform 0.4s ease-in-out; */
+}
+
+/* Hover effect for the can */
+/* .gz-ctr-hero-img:hover {
+    transform: rotate(-8deg) scale(1.05);
+} */
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .gz-ctr-wrapper {
+        background-position: 25% bottom;
+        /* Adjusts background focus for narrow screens */
+        padding: 60px 20px;
+    }
+
+    .gz-ctr-hero-img {
+        max-height: 350px;
+        /* Smaller can for mobile readability */
+    }
+}
+
+/*  */
+
+
+/* card section */
+/* Section Title */
+/* Section & Card Base */
+.gz-info-section {
+    background-color: #ffffff;
+    overflow: hidden;
+    /* Prevents absolute ../images from causing horizontal scroll */
+}
+
+.gz-info-card {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background: rgba(235, 235, 235, 0.61);
+    height: 235px;
+    overflow: hidden;
+    /* This will cut off the image where it overlaps the border */
+}
+
+/* Content layer sits above the decoration */
+.gz-info-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* Icon Styles */
+.gz-info-icon {
+    display: flex;
+    width: 103.1px;
+    height: 103.1px;
+    padding: 21.833px 20.62px 20.62px 21.833px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 1211.725px;
+    background: #000;
+}
+
+.gz-info-icon img {
+    width: 60.647px;
+    height: 60.647px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    color: white;
+}
+
+/* Text Styles */
+.gz-info-text {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 21.833px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30.566px;
+    /* 140% */
+}
+
+/* --- Absolute Positioned Decorations --- */
+
+
+/* Turtle Position (Card 1) */
+.gz-deco-turtle {
+    width: 111.994px;
+    height: 114px;
+    aspect-ratio: 56/57;
+    position: absolute;
+    right: 0.333px;
+    top: 14px;
+}
+
+/* Diver Jump (Card 2) */
+.gz-deco-jump {
+    width: 371px;
+    height: 371px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    right: -102.333px;
+    bottom: -95px;
+    transform: scaleX(-1);
+}
+
+/* Diver Swim (Card 3) */
+.gz-deco-swim {
+    width: 338px;
+    height: 338px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    right: -162px;
+    top: -63px;
+    transform: scaleX(-1);
+}
+
+/* Responsive Fix for Mobile */
+
+
+.gz-final-hero {
+    width: 100%;
+    height: 100vh;
+    /* Full screen height */
+    min-height: 600px;
+
+    /* APPLY YOUR ONE IMAGE HERE */
+    background-image: url('../images/c61fa5170389a8496e000499ba49c98f77995fef.png');
+
+    /* IMAGE SETTINGS */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Ensures the image fills the entire section */
+    background-position: bottom center;
+    /* Pins the waves/fruit to the bottom */
+    background-color: #ffffff;
+    /* Fallback color for the white sky area */
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.gz-content-box {
+    /* This moves the text to the top center of the image area */
+    margin-top: 4vh;
+    z-index: 10;
+}
+
+.gz-hero-heading {
+    color: #000;
+    font-family: Norwester;
+    font-size: var(--gz-larg-font-size);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--gz-larg-lh-size);
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .gz-final-hero {
+        /* On mobile, center the image so the can and text stay visible */
+        background-position: center bottom;
+    }
+
+    .gz-content-box {
+        margin-top: 5vh;
+    }
+}
+
+/* mobile responsive all */
+@media (max-width: 768px) {
+    .gz-thumb {
+        width: 35px;
+        height: 35px;
+
+    }
+
+    .gz-tagline {
+    font-size: 23.857px;
+        line-height: 28.4px;
+  
+}
+.gz-detail-box{
+    padding: 7px;
+}
+.gz-info-icon{
+    width: 70px;
+    height: 70px;
+}
+.gz-score-badge {
+    width: 100%;
+}
+.gz-info-text {
+    font-size: 17px;
+}
+.gz-deco-turtle{
+    width: 80px;
+    height: 80px;
+}
+.gz-info-icon img{
+    width: 50px;
+    height: 50px;
+}
+.gz-intel-card{
+  width: auto;  /* Or 100% if you want it to fill the screen width */
+    height: auto;
+}
+
+    .gz-chip.active {
+        display: flex;
+        padding: 4px 10px 0px 9px;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+        background: var(--GutZero-lemon-basil, #FAFE55);
+        box-shadow: 5px 4px 0 0 #000;
+        color: var(--GutZero-primary, #000);
+        font-family: "29LT Zawi";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30.8px;
+        letter-spacing: -1.28px;
+    }
+    .gz-chip {
+        display: flex;
+        padding: 4px 10px 0px 9px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: var(--GutZero-default-white, #FFF);
+        box-shadow: 5px 4px 0 0 #000;
+        color: var(--GutZero-primary, #000);
+        font-family: "29LT Zawi";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30.8px;
+        letter-spacing: -1.28px;
+    }
+    .gz-image-wrapper {
+        width: 80%;
+    }
+    .image-1 {
+    width: 180px;
+    height: 150px;
+    aspect-ratio: 88 / 73;
+    position: absolute;
+    top: 95px;
+    left: -29px;
+}
+.image-2 {
+    width: 247px;
+    height: 187px;
+    transform: rotate(-34.81deg);
+    aspect-ratio: 117 / 89;
+    position: absolute;
+    right: -92px;
+    top: -8px;
+}
+.gz-benefits-section {
+    padding-bottom: 150px !important;
+}
+.image-3 {
+    width: 120px;
+    height: 95px;
+    aspect-ratio: 77 / 60;
+    position: absolute;
+    left: 0px;
+    bottom: 50px;
+    z-index: 3;
+}
+.image-4 {
+    width: 170px;
+    height: 196px;
+    aspect-ratio: 27 / 34;
+    position: absolute;
+    right: -62px;
+    bottom: 0;
+    z-index: 3;
+}
+
+.gz-ctr-wrapper{
+ background-size: contain;
+ min-height: 44vh;
+}
+.gz-final-hero {
+    height: 24vh;
+    min-height: auto;
+    background-size: contain;
+  
+}
+.gz-ctr-main-title-2{
+    font-size: 2rem;
+}
+.gz-ctr-image-box {
+    margin-left: -129px;
+}
+.gz-flex-item {
+    width: 237px;
+}
+.gz-flex-container{
+   flex-direction: column; 
+   
+}
+.gz-flex-item-2{
+    margin-left: 0px;
+}
+
+}
