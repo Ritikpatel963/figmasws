@@ -28,49 +28,43 @@ setTimeout(() => {
 }, 100);
 
 //End
-// Marketplace js
-// Tab switching functionality
+// Zero Marketing Tab switching functionality
 const tabs = document.querySelectorAll('.zm-tab');
 const contents = document.querySelectorAll('.zm-content');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        // Remove active class from all tabs
-        tabs.forEach(t => t.classList.remove('zm-active'));
-
-        // Add active class to clicked tab
-        tab.classList.add('zm-active');
-
-        // Hide all content
-        contents.forEach(content => content.classList.add('zm-hidden'));
-
-        // Show selected content with animation
         const targetId = tab.getAttribute('data-tab');
+        
+        tabs.forEach(t => t.classList.remove('zm-active'));
+        tab.classList.add('zm-active');
+        
+        contents.forEach(content => content.classList.add('zm-hidden'));
+        
         const targetContent = document.getElementById(targetId);
         targetContent.classList.remove('zm-hidden');
-
-        // Re-trigger animations
-        const featureItems = targetContent.querySelectorAll('.zm-feature-item');
-        featureItems.forEach((item, index) => {
-            item.style.animation = 'none';
-            setTimeout(() => {
-                item.style.animation = `zm-fadeInUp 0.6s ease-out ${index * 0.1}s forwards`;
-            }, 10);
-        });
     });
 });
-
-// Smooth scroll behavior
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+// End
+// Page 3 Javascript
+/* Pack button active toggle */
+        function setActive(btn) {
+            const siblings = btn.closest('.d-flex').querySelectorAll('.pack-btn');
+            siblings.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
         }
-    });
-});
-// End 
+
+        /* Thumbnail active toggle */
+        document.querySelectorAll('.thumb-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+// End
+// Banner js 
+       function setActive(btn) {
+            document.querySelectorAll('.pack-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+// End
